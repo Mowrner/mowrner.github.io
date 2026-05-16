@@ -49,6 +49,7 @@
               <strong>2026</strong>
             </div>
           </div>
+          <div class="hero-emoji" aria-hidden="true">😂</div>
         </div>
       </section>
 
@@ -93,61 +94,93 @@
         </div>
 
         <div class="filters reveal" aria-label="Work filters">
-          <button class="filter active" type="button" data-filter="all">All</button>
-          <button class="filter" type="button" data-filter="fx">FX</button>
-          <button class="filter" type="button" data-filter="motion">Motion</button>
-          <button class="filter" type="button" data-filter="edit">Edit</button>
-          <button class="filter" type="button" data-filter="design">Design</button>
+          <button class="filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="fx" aria-pressed="false">FX</button>
+          <button class="filter" type="button" data-filter="motion" aria-pressed="false">Motion</button>
+          <button class="filter" type="button" data-filter="edit" aria-pressed="false">Edit</button>
+          <button class="filter" type="button" data-filter="design" aria-pressed="false">Design</button>
         </div>
 
         <div class="work-grid">
-          <article class="work-card reveal" data-category="fx" data-preview="Particles / Smoke / Impacts">
+          <button
+            class="work-card reveal"
+            type="button"
+            data-category="fx"
+            data-preview="Particles / Smoke / Impacts"
+            data-title="Cinematic FX Reel"
+            data-type="FX / Compositing"
+            data-description="Particle hits, atmosphere, smoke, glow accents, and shot finishing."
+          >
             <div class="thumb">
               <span>01</span>
               <div class="motion-frame"></div>
             </div>
             <div class="card-copy">
               <p>FX / Compositing</p>
-              <h3>Cinematic FX Reel</h3>
+              <span class="card-title">Cinematic FX Reel</span>
               <span>Particle hits, atmosphere, smoke, glow accents, and shot finishing.</span>
             </div>
-          </article>
+          </button>
 
-          <article class="work-card reveal" data-category="motion" data-preview="Titles / Loops / Typography">
+          <button
+            class="work-card reveal"
+            type="button"
+            data-category="motion"
+            data-preview="Titles / Loops / Typography"
+            data-title="Motion Title System"
+            data-type="Motion Graphics"
+            data-description="Kinetic type, lower thirds, title cards, logo motion, and social loops."
+          >
             <div class="thumb alt">
               <span>02</span>
               <div class="motion-frame"></div>
             </div>
             <div class="card-copy">
               <p>Motion Graphics</p>
-              <h3>Motion Title System</h3>
+              <span class="card-title">Motion Title System</span>
               <span>Kinetic type, lower thirds, title cards, logo motion, and social loops.</span>
             </div>
-          </article>
+          </button>
 
-          <article class="work-card reveal" data-category="edit" data-preview="Music Videos / Reels / Promos">
+          <button
+            class="work-card reveal"
+            type="button"
+            data-category="edit"
+            data-preview="Music Videos / Reels / Promos"
+            data-title="Edit Showcase"
+            data-type="Video Editing"
+            data-description="Music videos, reels, promos, transitions, rhythm cuts, and color flow."
+          >
             <div class="thumb cool">
               <span>03</span>
               <div class="motion-frame"></div>
             </div>
             <div class="card-copy">
               <p>Video Editing</p>
-              <h3>Edit Showcase</h3>
+              <span class="card-title">Edit Showcase</span>
               <span>Music videos, reels, promos, transitions, rhythm cuts, and color flow.</span>
             </div>
-          </article>
+          </button>
 
-          <article class="work-card reveal" data-category="design" data-preview="Posters / Thumbnails / Campaigns">
+          <button
+            class="work-card reveal"
+            type="button"
+            data-category="design"
+            data-preview="Posters / Thumbnails / Campaigns"
+            data-title="Design Assets"
+            data-type="Graphic Design"
+            data-description="Posters, thumbnails, campaign visuals, social media layouts, and brand assets."
+          >
             <div class="thumb warm">
               <span>04</span>
               <div class="motion-frame"></div>
             </div>
             <div class="card-copy">
               <p>Graphic Design</p>
-              <h3>Design Assets</h3>
+              <span class="card-title">Design Assets</span>
               <span>Posters, thumbnails, campaign visuals, social media layouts, and brand assets.</span>
             </div>
-          </article>
+          </button>
         </div>
       </section>
 
@@ -178,6 +211,22 @@
         </div>
       </section>
     </main>
+
+    <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-title" hidden>
+      <button class="modal-backdrop" type="button" aria-label="Close preview" data-modal-close></button>
+      <div class="modal-panel">
+        <button class="modal-close" type="button" aria-label="Close preview" data-modal-close>Close</button>
+        <div class="project-media">
+          <video class="project-video" controls playsinline hidden></video>
+          <div class="project-fallback" aria-hidden="true">Preview</div>
+        </div>
+        <div class="project-copy">
+          <p class="eyebrow project-type">Project</p>
+          <h2 id="project-title">Project preview</h2>
+          <p class="project-description"></p>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>
