@@ -21,7 +21,7 @@ async function checkViewport(name, viewport) {
 
   const headingVisible = await page.getByText('Cinematic visuals for brands, artists, and digital campaigns.').isVisible();
   const projectCount = await page.locator('.work-card').count();
-  const toolCount = await page.locator('.tool-list span').count();
+  const toolCount = await page.locator('.tool-card').count();
   const contactVisible = await page.getByText('hello@bhanu.studio').isVisible();
 
   results.push({

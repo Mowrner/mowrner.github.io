@@ -222,7 +222,7 @@ main {
 .hero-copy {
   position: relative;
   z-index: 1;
-  max-width: 780px;
+  max-width: 720px;
 }
 
 .eyebrow {
@@ -246,9 +246,11 @@ p {
 
 h1 {
   margin-bottom: 24px;
-  font-size: clamp(3.5rem, 8vw, 7.6rem);
-  line-height: 0.9;
+  max-width: 12.2ch;
+  font-size: clamp(3.25rem, 6.4vw, 5.85rem);
+  line-height: 0.94;
   letter-spacing: 0;
+  text-wrap: balance;
   text-shadow:
     0 0 18px rgba(245, 241, 232, 0.2),
     0 0 48px rgba(76, 195, 255, 0.22),
@@ -273,7 +275,7 @@ p {
 }
 
 .hero-copy > p:not(.eyebrow) {
-  max-width: 620px;
+  max-width: 560px;
   font-size: 1.08rem;
   text-shadow: 0 0 18px rgba(245, 241, 232, 0.1);
 }
@@ -685,21 +687,94 @@ p {
   border-left: 1px solid var(--line);
 }
 
-.tool-list span {
-  min-height: 58px;
+.tool-card {
+  min-height: 82px;
   display: flex;
   align-items: center;
-  padding: 0 18px;
+  gap: 14px;
+  padding: 14px 18px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   color: var(--text);
   font-weight: 720;
-  transition: background 180ms ease, color 180ms ease;
+  background:
+    linear-gradient(135deg, rgba(233, 247, 255, 0.045), rgba(76, 195, 255, 0.018));
+  transition:
+    background 260ms var(--ease-fluid),
+    border-color 260ms var(--ease-fluid),
+    color 260ms var(--ease-fluid),
+    transform 260ms var(--ease-fluid);
 }
 
-.tool-list span:hover {
+.tool-card:hover {
   color: #090909;
   background: linear-gradient(120deg, var(--paper), var(--ice));
+  border-color: rgba(200, 240, 255, 0.44);
+  transform: translateY(-3px);
+}
+
+.tool-icon {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(233, 247, 255, 0.22);
+  border-radius: 8px;
+  color: var(--paper);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.18), transparent 1.3rem),
+    linear-gradient(145deg, rgba(12, 34, 50, 0.94), rgba(8, 16, 24, 0.92));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.tool-icon img {
+  position: relative;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.tool-initial {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: currentColor;
+  font-size: 0.82rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.tool-name {
+  min-width: 0;
+  color: inherit;
+  line-height: 1.2;
+}
+
+.ps,
+.ae,
+.pr {
+  color: #bfe9ff;
+}
+
+.ai,
+.blender,
+.houdini {
+  color: #ffd59d;
+}
+
+.canva,
+.maya,
+.cavalry,
+.nuke {
+  color: #bff8ff;
 }
 
 .contact {
@@ -917,6 +992,20 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .hero-copy {
+    max-width: 680px;
+  }
+
+  h1 {
+    max-width: 12.4ch;
+    font-size: clamp(3.15rem, 9.4vw, 4.9rem);
+    line-height: 0.96;
+  }
+
+  .hero-copy > p:not(.eyebrow) {
+    max-width: 620px;
+  }
+
   .work-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -974,7 +1063,9 @@ p {
   }
 
   h1 {
-    font-size: clamp(2.85rem, 15vw, 4.25rem);
+    max-width: 9.8ch;
+    font-size: clamp(2.9rem, 13.6vw, 4rem);
+    line-height: 0.98;
   }
 
   h2 {
