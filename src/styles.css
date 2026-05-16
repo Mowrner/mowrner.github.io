@@ -8,6 +8,14 @@
   --muted: #9f9a92;
   --line: rgba(245, 241, 232, 0.12);
   --accent: #d8d0c2;
+  --glacier: #4cc3ff;
+  --glacier-soft: rgba(76, 195, 255, 0.22);
+  --paper: #e9f7ff;
+  --steel: #9cc8e8;
+  --sky-glow: rgba(126, 214, 255, 0.18);
+  --anime-blue: rgba(76, 195, 255, 0.22);
+  --lake: #0f4f7a;
+  --ice: #c8f0ff;
   --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -24,10 +32,43 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 82% 10%, rgba(255, 255, 255, 0.12), transparent 22rem),
-    radial-gradient(circle at 12% 28%, rgba(255, 255, 255, 0.045), transparent 28rem),
-    linear-gradient(135deg, #050505 0%, #0b0b0b 48%, #161616 100%),
+    linear-gradient(90deg, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.76) 42%, rgba(5, 5, 5, 0.5) 100%),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.36), rgba(5, 5, 5, 0.86) 78%),
+    radial-gradient(circle at 64% 22%, rgba(126, 214, 255, 0.16), transparent 18rem),
+    radial-gradient(circle at 88% 44%, rgba(76, 195, 255, 0.22), transparent 20rem),
+    radial-gradient(circle at 82% 12%, rgba(13, 89, 143, 0.24), transparent 18rem),
+    radial-gradient(circle at 12% 28%, rgba(243, 228, 200, 0.06), transparent 28rem),
+    url("/assets/anime-mountain-lake-bg.png") center top / cover fixed no-repeat,
+    linear-gradient(145deg, #050505 0%, #0b0b0b 48%, #171211 100%),
     var(--bg);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.26;
+  background:
+    repeating-linear-gradient(118deg, transparent 0 28px, rgba(245, 241, 232, 0.035) 29px 30px, transparent 31px 62px),
+    linear-gradient(115deg, transparent 0 48%, rgba(126, 214, 255, 0.13) 48.2% 48.8%, transparent 49% 100%),
+    repeating-linear-gradient(90deg, transparent 0 88px, rgba(243, 228, 200, 0.025) 89px 90px);
+  mask-image: radial-gradient(circle at 50% 20%, #000, transparent 78%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.42;
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.88), rgba(5, 5, 5, 0.46) 54%, rgba(5, 5, 5, 0.3)),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.08), rgba(5, 5, 5, 0.88) 72%),
+    url("/assets/anime-mountain-lake-bg.png") center top / cover no-repeat;
+  filter: saturate(1.08) contrast(1.04);
 }
 
 body.modal-open {
@@ -107,6 +148,8 @@ button {
 .brand {
   font-weight: 850;
   text-transform: uppercase;
+  color: var(--paper);
+  text-shadow: 0 0 18px rgba(76, 195, 255, 0.28);
 }
 
 .nav {
@@ -117,7 +160,7 @@ button {
 }
 
 .nav a:hover {
-  color: var(--text);
+  color: var(--paper);
   text-shadow: 0 0 16px rgba(245, 241, 232, 0.22);
 }
 
@@ -158,24 +201,40 @@ main {
   position: absolute;
   inset: 72px calc(50% - 50vw) auto;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(245, 241, 232, 0.28), transparent);
-  opacity: 0.5;
+  background: linear-gradient(90deg, transparent, var(--glacier), var(--steel), transparent);
+  opacity: 0.68;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: clamp(120px, 18vw, 280px);
+  top: 10%;
+  z-index: 0;
+  width: min(30vw, 420px);
+  height: 2px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(233, 247, 255, 0.88), rgba(76, 195, 255, 0.64), transparent);
+  box-shadow: 0 0 28px rgba(76, 195, 255, 0.24);
+  transform: rotate(-26deg);
 }
 
 .hero-copy {
+  position: relative;
+  z-index: 1;
   max-width: 780px;
 }
 
 .eyebrow {
   margin: 0 0 14px;
-  color: var(--muted);
+  color: var(--paper);
   font-size: 0.78rem;
   font-weight: 780;
   letter-spacing: 0;
   text-transform: uppercase;
   text-shadow:
     0 0 12px rgba(245, 241, 232, 0.22),
-    0 0 28px rgba(216, 208, 194, 0.12);
+    0 0 28px rgba(76, 195, 255, 0.24);
 }
 
 h1,
@@ -192,7 +251,7 @@ h1 {
   letter-spacing: 0;
   text-shadow:
     0 0 18px rgba(245, 241, 232, 0.2),
-    0 0 48px rgba(216, 208, 194, 0.16),
+    0 0 48px rgba(76, 195, 255, 0.22),
     0 0 84px rgba(245, 241, 232, 0.08);
 }
 
@@ -250,13 +309,15 @@ p {
 
 .button.primary {
   color: #0b0b0b;
-  background: var(--accent);
-  border-color: var(--accent);
+  background: linear-gradient(120deg, var(--paper), var(--ice), #9fdfff);
+  border-color: rgba(233, 247, 255, 0.88);
+  box-shadow: 0 0 28px rgba(76, 195, 255, 0.16);
 }
 
 .button.secondary {
   color: var(--text);
   background: transparent;
+  border-color: rgba(76, 195, 255, 0.45);
 }
 
 .hero-visual {
@@ -264,11 +325,15 @@ p {
   display: grid;
   place-items: center;
   position: relative;
+  z-index: 1;
   border: 1px solid var(--line);
   background:
+    repeating-linear-gradient(125deg, transparent 0 36px, rgba(255, 255, 255, 0.035) 37px 38px, transparent 39px 72px),
     linear-gradient(rgba(245, 241, 232, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(245, 241, 232, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 50% 42%, rgba(245, 241, 232, 0.12), transparent 13rem),
+    radial-gradient(circle at 24% 18%, var(--anime-blue), transparent 10rem),
+    radial-gradient(circle at 78% 18%, var(--sky-glow), transparent 11rem),
+    radial-gradient(circle at 50% 42%, rgba(76, 195, 255, 0.18), transparent 13rem),
     var(--panel);
   background-size: 34px 34px;
   border-radius: 8px;
@@ -283,9 +348,22 @@ p {
   inset: -42%;
   z-index: 1;
   background:
-    linear-gradient(115deg, transparent 34%, rgba(245, 241, 232, 0.16) 49%, transparent 64%);
+    linear-gradient(115deg, transparent 34%, rgba(233, 247, 255, 0.16) 48%, rgba(76, 195, 255, 0.16) 52%, transparent 64%);
   transform: translateX(-36%) rotate(8deg);
   animation: liquidSweep 8s var(--ease-fluid) infinite;
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 18px 22px auto auto;
+  z-index: 1;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--paper), var(--glacier));
+  box-shadow: 0 0 22px rgba(76, 195, 255, 0.34);
+  transform: rotate(-28deg);
+  transform-origin: right center;
 }
 
 .hero-emoji {
@@ -386,7 +464,7 @@ p {
 
 .capabilities article:hover {
   background:
-    radial-gradient(circle at 80% 20%, rgba(245, 241, 232, 0.1), transparent 8rem),
+    radial-gradient(circle at 80% 20%, var(--glacier-soft), transparent 8rem),
     rgba(245, 241, 232, 0.035);
   transform: translateY(-5px);
 }
@@ -401,6 +479,7 @@ p {
   display: block;
   color: var(--text);
   font-size: 1.05rem;
+  text-shadow: 0 0 14px rgba(76, 195, 255, 0.18);
 }
 
 .capabilities p {
@@ -450,8 +529,8 @@ p {
 .filter.active,
 .filter:hover {
   color: #0b0b0b;
-  background: var(--accent);
-  border-color: var(--accent);
+  background: linear-gradient(120deg, var(--paper), var(--ice));
+  border-color: var(--ice);
 }
 
 .work-grid {
@@ -480,8 +559,10 @@ p {
 .work-card:hover,
 .work-card:focus-visible {
   transform: translateY(-8px) scale(1.012);
-  border-color: rgba(245, 241, 232, 0.32);
-  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.26);
+  border-color: rgba(76, 195, 255, 0.48);
+  box-shadow:
+    0 24px 54px rgba(0, 0, 0, 0.26),
+    0 0 40px rgba(76, 195, 255, 0.16);
   outline: none;
 }
 
@@ -494,29 +575,31 @@ p {
   min-height: 240px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 72% 28%, rgba(245, 241, 232, 0.13), transparent 7rem),
-    linear-gradient(135deg, rgba(245, 241, 232, 0.1), rgba(245, 241, 232, 0.025));
+    repeating-linear-gradient(125deg, transparent 0 34px, rgba(245, 241, 232, 0.03) 35px 36px, transparent 37px 68px),
+    radial-gradient(circle at 72% 28%, rgba(76, 195, 255, 0.2), transparent 7rem),
+    radial-gradient(circle at 20% 20%, rgba(126, 214, 255, 0.12), transparent 8rem),
+    linear-gradient(135deg, rgba(233, 247, 255, 0.1), rgba(245, 241, 232, 0.025));
 }
 
 .thumb::before {
   content: "";
   position: absolute;
   inset: -55%;
-  background: linear-gradient(115deg, transparent 36%, rgba(245, 241, 232, 0.18) 50%, transparent 64%);
+  background: linear-gradient(115deg, transparent 36%, rgba(233, 247, 255, 0.14) 49%, rgba(76, 195, 255, 0.16) 52%, transparent 64%);
   transform: translateX(-36%) rotate(12deg);
   animation: liquidSweep 9s var(--ease-fluid) infinite;
 }
 
 .thumb.alt {
-  background: linear-gradient(135deg, rgba(159, 231, 220, 0.16), rgba(245, 241, 232, 0.025));
+  background: linear-gradient(135deg, rgba(76, 195, 255, 0.2), rgba(245, 241, 232, 0.025));
 }
 
 .thumb.cool {
-  background: linear-gradient(135deg, rgba(120, 145, 180, 0.18), rgba(245, 241, 232, 0.025));
+  background: linear-gradient(135deg, rgba(15, 79, 122, 0.28), rgba(245, 241, 232, 0.025));
 }
 
 .thumb.warm {
-  background: linear-gradient(135deg, rgba(216, 208, 194, 0.2), rgba(245, 241, 232, 0.025));
+  background: linear-gradient(135deg, rgba(200, 240, 255, 0.22), rgba(15, 79, 122, 0.12));
 }
 
 .thumb > span {
@@ -544,7 +627,7 @@ p {
 
 .motion-frame::before {
   inset: 32%;
-  background: var(--accent);
+  background: var(--paper);
 }
 
 .motion-frame::after {
@@ -553,7 +636,9 @@ p {
   top: 16%;
   right: 12%;
   background: #f5f1e8;
-  box-shadow: 0 0 18px rgba(245, 241, 232, 0.28);
+  box-shadow:
+    0 0 18px rgba(245, 241, 232, 0.28),
+    0 0 28px rgba(76, 195, 255, 0.3);
   animation: dotRun 4s linear infinite;
 }
 
@@ -575,6 +660,7 @@ p {
   font-size: 1.4rem;
   font-weight: 760;
   line-height: 1.2;
+  text-shadow: 0 0 18px rgba(76, 195, 255, 0.14);
 }
 
 .card-copy span {
@@ -613,7 +699,7 @@ p {
 
 .tool-list span:hover {
   color: #090909;
-  background: var(--accent);
+  background: linear-gradient(120deg, var(--paper), var(--ice));
 }
 
 .contact {
@@ -686,7 +772,7 @@ p {
   background:
     linear-gradient(rgba(245, 241, 232, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(245, 241, 232, 0.04) 1px, transparent 1px),
-    radial-gradient(circle at 50% 42%, rgba(245, 241, 232, 0.16), transparent 14rem),
+    radial-gradient(circle at 50% 42%, rgba(76, 195, 255, 0.18), transparent 14rem),
     #0b0b0b;
   background-size: 34px 34px;
 }
@@ -898,6 +984,10 @@ p {
   .hero {
     min-height: auto;
     padding: 110px 0 72px;
+  }
+
+  .hero::after {
+    display: none;
   }
 
   .hero-actions,
