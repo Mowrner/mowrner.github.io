@@ -3,33 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Bhanu portfolio for FX, motion graphics, graphic design, and video editing." />
+    <meta name="description" content="Bhanu — FX Artist & Motion Designer. Cinematic visuals for brands, artists, and digital campaigns." />
+    <meta property="og:title" content="Bhanu | FX Artist & Motion Designer" />
+    <meta property="og:description" content="Cinematic FX, motion graphics, graphic design, and video editing with a clean finish." />
+    <meta property="og:type" content="website" />
     <title>Bhanu | FX Artist & Motion Designer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
   <body>
-    <div class="cursor" aria-hidden="true"></div>
-    <div class="preview-label" aria-hidden="true">View</div>
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#top">Bhanu</a>
-      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
+      <a class="brand" href="#top">
+        <span class="brand-text">Bhanu.exe</span>
+        <span class="brand-jp" aria-hidden="true">武</span>
+      </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#about">About</a>
         <a href="#tools">Tools</a>
         <a href="#contact">Contact</a>
       </nav>
+      <div class="nav-end">
+        <a class="nav-cta" href="mailto:hello@bhanu.studio">Hire me ↗</a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-copy reveal">
-          <p class="eyebrow">FX Artist / Motion Graphics / Design / Video Edit</p>
+          <p class="eyebrow">
+            <span class="label">EP.01</span>
+            FX Artist / Motion Graphics / Design / Video Edit
+          </p>
           <h1>Cinematic visuals for brands, artists, and digital campaigns.</h1>
+          <p class="hero-jp" aria-hidden="true">最高の映像作品を届ける</p>
           <p>
             I am Bhanu. I create FX shots, motion graphics, graphic design, and edited video content with a
             clean cinematic finish.
@@ -41,36 +58,74 @@
         </div>
 
         <div class="hero-visual reveal" data-tilt>
-          <div class="orbital">
-            <span></span>
-            <span></span>
-            <div class="core">
-              <small>Portfolio</small>
-              <strong>2026</strong>
+          <div class="char-card">
+            <div class="char-header">
+              <span class="char-label">キャラクター</span>
+              <span class="rank-badge">RANK S</span>
+            </div>
+            <p class="char-name">Bhanu</p>
+            <p class="char-role">FX Artist ✦ Motion Designer</p>
+            <div class="char-stats">
+              <div class="stat-row" style="--i:0">
+                <span class="stat-label-text">FX / VFX</span>
+                <div class="stat-track"><div class="stat-fill" style="--w:98%"></div></div>
+                <span class="stat-val">98</span>
+              </div>
+              <div class="stat-row" style="--i:1">
+                <span class="stat-label-text">Motion</span>
+                <div class="stat-track"><div class="stat-fill" style="--w:95%"></div></div>
+                <span class="stat-val">95</span>
+              </div>
+              <div class="stat-row" style="--i:2">
+                <span class="stat-label-text">Design</span>
+                <div class="stat-track"><div class="stat-fill" style="--w:90%"></div></div>
+                <span class="stat-val">90</span>
+              </div>
+              <div class="stat-row" style="--i:3">
+                <span class="stat-label-text">Video Edit</span>
+                <div class="stat-track"><div class="stat-fill" style="--w:93%"></div></div>
+                <span class="stat-val">93</span>
+              </div>
+            </div>
+            <div class="char-power">
+              <span class="power-label">戦闘力</span>
+              <span class="power-value">9,999</span>
             </div>
           </div>
-          <div class="hero-emoji" aria-hidden="true">😂</div>
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="card-rings" aria-hidden="true"><span></span><span></span></div>
         </div>
       </section>
 
+      <!-- Skills ticker strip -->
+      <div class="ticker-wrap" aria-label="Skills">
+        <div class="ticker-band">
+          <div class="ticker-track">
+            <span>FX / VFX</span><span>Particle Systems</span><span>After Effects</span><span>Houdini</span><span>Motion Graphics</span><span>Cinematic Edit</span><span>Blender</span><span>Graphic Design</span><span>Nuke</span><span>3D Compositing</span><span>Premiere Pro</span><span>Color Grading</span><span>Maya</span><span>Visual Storytelling</span>
+            <!-- Duplicate for seamless loop -->
+            <span>FX / VFX</span><span>Particle Systems</span><span>After Effects</span><span>Houdini</span><span>Motion Graphics</span><span>Cinematic Edit</span><span>Blender</span><span>Graphic Design</span><span>Nuke</span><span>3D Compositing</span><span>Premiere Pro</span><span>Color Grading</span><span>Maya</span><span>Visual Storytelling</span>
+          </div>
+        </div>
+      </div>
+
       <section class="capabilities reveal" aria-label="Services">
         <article>
-          <span>01</span>
+          <span class="cap-num">01</span>
           <strong>FX Artist</strong>
           <p>Particles, smoke, impacts, cinematic finishing.</p>
         </article>
         <article>
-          <span>02</span>
+          <span class="cap-num">02</span>
           <strong>Motion Graphics</strong>
           <p>Title systems, kinetic type, logo motion.</p>
         </article>
         <article>
-          <span>03</span>
+          <span class="cap-num">03</span>
           <strong>Graphic Design</strong>
           <p>Posters, thumbnails, social and campaign assets.</p>
         </article>
         <article>
-          <span>04</span>
+          <span class="cap-num">04</span>
           <strong>Video Editing</strong>
           <p>Music videos, reels, promos, rhythm cuts.</p>
         </article>
@@ -78,7 +133,10 @@
 
       <section class="section intro" id="about">
         <div class="section-title reveal">
-          <p class="eyebrow">About</p>
+          <p class="eyebrow">
+            <span class="label">About</span>
+            <span class="eyebrow-jp">自己紹介</span>
+          </p>
           <h2>Visual work that feels polished, readable, and cinematic.</h2>
         </div>
         <p class="reveal">
@@ -89,7 +147,10 @@
 
       <section class="section" id="work">
         <div class="section-title reveal">
-          <p class="eyebrow">Selected Work</p>
+          <p class="eyebrow">
+            <span class="label">Selected Work</span>
+            <span class="eyebrow-jp">作品集</span>
+          </p>
           <h2>Project directions</h2>
         </div>
 
@@ -111,9 +172,10 @@
             data-type="FX / Compositing"
             data-description="Particle hits, atmosphere, smoke, glow accents, and shot finishing."
           >
-            <div class="thumb">
-              <span>01</span>
-              <div class="motion-frame"></div>
+            <div class="thumb fx-thumb">
+              <div class="thumb-bg"></div>
+              <div class="thumb-orb"></div>
+              <span class="ep-badge">EP.01</span>
             </div>
             <div class="card-copy">
               <p>FX / Compositing</p>
@@ -131,9 +193,10 @@
             data-type="Motion Graphics"
             data-description="Kinetic type, lower thirds, title cards, logo motion, and social loops."
           >
-            <div class="thumb alt">
-              <span>02</span>
-              <div class="motion-frame"></div>
+            <div class="thumb motion-thumb">
+              <div class="thumb-bg"></div>
+              <div class="thumb-orb"></div>
+              <span class="ep-badge">EP.02</span>
             </div>
             <div class="card-copy">
               <p>Motion Graphics</p>
@@ -151,9 +214,10 @@
             data-type="Video Editing"
             data-description="Music videos, reels, promos, transitions, rhythm cuts, and color flow."
           >
-            <div class="thumb cool">
-              <span>03</span>
-              <div class="motion-frame"></div>
+            <div class="thumb edit-thumb">
+              <div class="thumb-bg"></div>
+              <div class="thumb-orb"></div>
+              <span class="ep-badge">EP.03</span>
             </div>
             <div class="card-copy">
               <p>Video Editing</p>
@@ -171,9 +235,10 @@
             data-type="Graphic Design"
             data-description="Posters, thumbnails, campaign visuals, social media layouts, and brand assets."
           >
-            <div class="thumb warm">
-              <span>04</span>
-              <div class="motion-frame"></div>
+            <div class="thumb design-thumb">
+              <div class="thumb-bg"></div>
+              <div class="thumb-orb"></div>
+              <span class="ep-badge">EP.04</span>
             </div>
             <div class="card-copy">
               <p>Graphic Design</p>
@@ -186,77 +251,70 @@
 
       <section class="section tools" id="tools">
         <div class="section-title reveal">
-          <p class="eyebrow">Software</p>
+          <p class="eyebrow">
+            <span class="label">Software</span>
+            <span class="eyebrow-jp">ツール</span>
+          </p>
           <h2>Tools I use</h2>
         </div>
         <div class="tool-list reveal">
           <article class="tool-card">
             <span class="tool-icon ps">
-              <img src="https://cdn.simpleicons.org/adobephotoshop/31A8FF" alt="" loading="lazy" onerror="this.hidden=true" />
-              <span class="tool-initial">Ps</span>
+              <img src="https://cdn.simpleicons.org/adobephotoshop/31A8FF" alt="" loading="lazy" onerror="this.outerHTML='Ps'" />
             </span>
             <span class="tool-name">Photoshop</span>
           </article>
           <article class="tool-card">
             <span class="tool-icon houdini">
-              <img src="https://cdn.simpleicons.org/sidefx/FF4713" alt="" loading="lazy" onerror="this.hidden=true" />
-              <span class="tool-initial">H</span>
+              <img src="https://cdn.simpleicons.org/houdini/FF4713" alt="" loading="lazy" onerror="this.outerHTML='H'" />
             </span>
             <span class="tool-name">Houdini</span>
           </article>
           <article class="tool-card">
             <span class="tool-icon pr">
-              <img src="https://cdn.simpleicons.org/adobepremierepro/9999FF" alt="" loading="lazy" onerror="this.hidden=true" />
-              <span class="tool-initial">Pr</span>
+              <img src="https://cdn.simpleicons.org/adobepremierepro/9999FF" alt="" loading="lazy" onerror="this.outerHTML='Pr'" />
             </span>
             <span class="tool-name">Premiere Pro</span>
           </article>
           <article class="tool-card">
             <span class="tool-icon ae">
-              <img src="https://cdn.simpleicons.org/adobeaftereffects/9999FF" alt="" loading="lazy" onerror="this.hidden=true" />
-              <span class="tool-initial">Ae</span>
+              <img src="https://cdn.simpleicons.org/adobeaftereffects/9999FF" alt="" loading="lazy" onerror="this.outerHTML='Ae'" />
             </span>
             <span class="tool-name">After Effects</span>
           </article>
           <article class="tool-card">
             <span class="tool-icon cavalry">
-              <img src="https://cdn.simpleicons.org/cavalry/29ABE2" alt="" loading="lazy" onerror="this.hidden=true" />
-              <span class="tool-initial">Cv</span>
+              <img src="https://cdn.simpleicons.org/cavalry/29ABE2" alt="" loading="lazy" onerror="this.outerHTML='Cv'" />
             </span>
             <span class="tool-name">Cavalry</span>
           </article>
           <article class="tool-card">
             <span class="tool-icon blender">
-              <img src="https://cdn.simpleicons.org/blender/F5792A" alt="" loading="lazy" onerror="this.hidden=true" />
-              <span class="tool-initial">B</span>
+              <img src="https://cdn.simpleicons.org/blender/F5792A" alt="" loading="lazy" onerror="this.outerHTML='B'" />
             </span>
             <span class="tool-name">Blender</span>
           </article>
           <article class="tool-card">
             <span class="tool-icon maya">
-              <img src="https://cdn.simpleicons.org/autodeskmaya/37A5CC" alt="" loading="lazy" onerror="this.hidden=true" />
-              <span class="tool-initial">My</span>
+              <img src="https://cdn.simpleicons.org/autodeskmaya/37A5CC" alt="" loading="lazy" onerror="this.outerHTML='My'" />
             </span>
             <span class="tool-name">Maya</span>
           </article>
           <article class="tool-card">
             <span class="tool-icon canva">
-              <img src="https://cdn.simpleicons.org/canva/00C4CC" alt="" loading="lazy" onerror="this.hidden=true" />
-              <span class="tool-initial">C</span>
+              <img src="https://cdn.simpleicons.org/canva/00C4CC" alt="" loading="lazy" onerror="this.outerHTML='C'" />
             </span>
             <span class="tool-name">Canva</span>
           </article>
           <article class="tool-card">
             <span class="tool-icon ai">
-              <img src="https://cdn.simpleicons.org/adobeillustrator/FF9A00" alt="" loading="lazy" onerror="this.hidden=true" />
-              <span class="tool-initial">Ai</span>
+              <img src="https://cdn.simpleicons.org/adobeillustrator/FF9A00" alt="" loading="lazy" onerror="this.outerHTML='Ai'" />
             </span>
             <span class="tool-name">Illustrator</span>
           </article>
           <article class="tool-card">
             <span class="tool-icon nuke">
-              <img src="https://cdn.simpleicons.org/nuke/8CC84B" alt="" loading="lazy" onerror="this.hidden=true" />
-              <span class="tool-initial">Nk</span>
+              <img src="https://cdn.simpleicons.org/nuke/8CC84B" alt="" loading="lazy" onerror="this.outerHTML='Nk'" />
             </span>
             <span class="tool-name">Nuke</span>
           </article>
@@ -264,10 +322,14 @@
       </section>
 
       <section class="contact section" id="contact">
-        <div class="reveal">
-          <p class="eyebrow">Contact</p>
+        <div class="contact-inner reveal">
+          <p class="eyebrow">
+            <span class="label">Contact</span>
+            <span class="eyebrow-jp">連絡先</span>
+          </p>
           <h2>Have a project that needs clean cinematic visuals?</h2>
-          <a class="button primary" href="mailto:hello@bhanu.studio">hello@bhanu.studio</a>
+          <p>FX shots, motion graphics, graphic design, and edited video content — built for brands, artists, and campaigns.</p>
+          <a class="email-cta" href="mailto:hello@bhanu.studio">hello@bhanu.studio</a>
         </div>
       </section>
     </main>
@@ -287,6 +349,11 @@
         </div>
       </div>
     </div>
+
+    <footer class="site-footer">
+      <span>(c) 2026 Bhanu</span>
+      <span>FX Artist · Motion Designer · Visual Storyteller</span>
+    </footer>
 
     <script type="module" src="/src/main.js"></script>
   </body>
